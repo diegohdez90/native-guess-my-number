@@ -1,10 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function PrimaryButton() {
+export default function PrimaryButton({
+  children
+}) {
   return (
     <View>
-      <Text>PrimaryButton</Text>
+      <Text>{children}</Text>
     </View>
   )
 }

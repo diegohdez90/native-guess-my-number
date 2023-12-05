@@ -7,7 +7,7 @@ export default function RootScreen() {
   return (
     <View style={styles.inputContainer}>
       <Text>Welcome</Text>
-      <TextInput />
+      <TextInput style={styles.input} maxLength={2} />
       <PrimaryButton>Reset</PrimaryButton>
       <PrimaryButton>Confirm</PrimaryButton>
     </View>
@@ -16,6 +16,8 @@ export default function RootScreen() {
 
 const styles = StyleSheet.create({
   inputContainer: {
+    flexBasis: 'auto',
+    width: '100%',
     padding: 16,
     alignItems: 'center',
     justifyContent: 'center',
@@ -30,5 +32,15 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 6,
     shadowOpacity: 0.25,
+  },
+  input: {
+    width: '100%',
+    padding: 16,
+    textAlign: 'center',
+    borderBottomColor: '#e6e34c',
+    borderBottomWidth: 2,
+    color: '#e6e34c',
+    marginVertical: 8,
+    fontWeight: 'bold'
   }
 })
