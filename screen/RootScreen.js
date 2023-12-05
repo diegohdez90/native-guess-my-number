@@ -7,7 +7,14 @@ export default function RootScreen() {
   return (
     <View style={styles.inputContainer}>
       <Text>Welcome</Text>
-      <TextInput style={styles.input} maxLength={2} />
+      <TextInput
+        style={styles.input}
+        maxLength={2}
+        keyboardType='number-pad'
+        autoCapitalize='none'
+        autoCorrect={false}
+        autoComplete={false}
+      />
       <PrimaryButton>Reset</PrimaryButton>
       <PrimaryButton>Confirm</PrimaryButton>
     </View>
