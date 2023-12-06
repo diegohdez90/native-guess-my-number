@@ -13,7 +13,7 @@ export default function RootScreen() {
         keyboardType='number-pad'
         autoCapitalize='none'
         autoCorrect={false}
-        autoComplete={false}
+        autoComplete='off'
       />
       <PrimaryButton>Reset</PrimaryButton>
       <PrimaryButton>Confirm</PrimaryButton>
@@ -25,11 +25,12 @@ const styles = StyleSheet.create({
   inputContainer: {
     flexBasis: 'auto',
     width: '100%',
+    gap: 8,
     padding: 16,
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'center',
-    backgroundColor: '#be0202',
+    backgroundColor: '#be0270',
     borderRadius: 12,
     elevation: 8,
     shadowColor: 'black',
