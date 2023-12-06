@@ -1,15 +1,41 @@
-import { View, StyleSheet, Text } from 'react-native'
-import React from 'react'
+import { Alert, View, StyleSheet, Text } from 'react-native'
+import React, { useState } from 'react'
 import PrimaryButton from '../components/PrimaryButton'
 import { TextInput } from 'react-native'
 
 export default function RootScreen() {
+  const [number, setNumber] = useState("");
+
+  const onHandleChangeNumber = (v) => {
+    setNumber(v);
+  }
+
+  const onResetInput = () => {
+    setNumber('')
+  }
+
+  const onConfirmNumberInputValue = () => {
+    const numberEntered = +number;
+    if(isNaN(numberEntered) || numberEntered <= 0 || numberEntered > 99) {
+      Alert.alert('Error', 'The input value is not valid', [
+        {
+          text: 'Close',
+          style: 'destructive',
+          onPress: onResetInput
+        }
+      ])
+      return;
+    }
+  }
+
   return (
     <View style={styles.inputContainer}>
       <Text>Welcome</Text>
       <TextInput
         style={styles.input}
         maxLength={2}
+        value={number}
+        onChangeText={onHandleChangeNumber}
         keyboardType='number-pad'
         autoCapitalize='none'
         autoCorrect={false}
@@ -17,10 +43,14 @@ export default function RootScreen() {
       />
       <View style={styles.actions}>
         <View style={styles.actionContainer}>
-          <PrimaryButton>Reset</PrimaryButton>
+          <PrimaryButton
+            onPress={onResetInput}
+          >Reset</PrimaryButton>
         </View>
         <View style={styles.actionContainer}>
-          <PrimaryButton>Confirm</PrimaryButton>
+          <PrimaryButton
+            onPress={onConfirmNumberInputValue}
+          >Confirm</PrimaryButton>
         </View>
       </View>
     </View>
