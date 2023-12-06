@@ -3,7 +3,9 @@ import React, { useState } from 'react'
 import PrimaryButton from '../components/PrimaryButton'
 import { TextInput } from 'react-native'
 
-export default function RootScreen() {
+export default function RootScreen({
+  onConfirmNumber
+}) {
   const [number, setNumber] = useState("");
 
   const onHandleChangeNumber = (v) => {
@@ -26,6 +28,7 @@ export default function RootScreen() {
       ])
       return;
     }
+    onConfirmNumber(numberEntered)
   }
 
   return (
