@@ -1,18 +1,21 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import RootScreen from './screen/RootScreen';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <LinearGradient
+      colors={['#ee33ff', '#fcff55']}
+      style={styles.container}
+    >
       <RootScreen />
-    </View>
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#9158ee',
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 32,
