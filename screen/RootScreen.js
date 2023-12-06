@@ -15,8 +15,14 @@ export default function RootScreen() {
         autoCorrect={false}
         autoComplete='off'
       />
-      <PrimaryButton>Reset</PrimaryButton>
-      <PrimaryButton>Confirm</PrimaryButton>
+      <View style={styles.actions}>
+        <View style={styles.actionContainer}>
+          <PrimaryButton>Reset</PrimaryButton>
+        </View>
+        <View style={styles.actionContainer}>
+          <PrimaryButton>Confirm</PrimaryButton>
+        </View>
+      </View>
     </View>
   )
 }
@@ -42,7 +48,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
   },
   input: {
-    width: '100%',
     padding: 16,
     textAlign: 'center',
     borderBottomColor: '#e6e34c',
@@ -50,5 +55,15 @@ const styles = StyleSheet.create({
     color: '#e6e34c',
     marginVertical: 8,
     fontWeight: 'bold'
+  },
+  actions: {
+    width: '100%',
+    flexDirection: 'row',
+    alignContent: 'space-between',
+    justifyContent: 'space-evenly',
+    gap: 12,
+  },
+  actionContainer: {
+    flex: 1
   }
 })
