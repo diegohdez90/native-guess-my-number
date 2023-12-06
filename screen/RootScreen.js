@@ -29,7 +29,6 @@ export default function RootScreen() {
 
 const styles = StyleSheet.create({
   inputContainer: {
-    flexBasis: 'auto',
     width: '100%',
     gap: 8,
     padding: 16,
