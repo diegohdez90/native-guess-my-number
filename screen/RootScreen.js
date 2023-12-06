@@ -29,7 +29,6 @@ export default function RootScreen() {
 
 const styles = StyleSheet.create({
   inputContainer: {
-    width: '100%',
     gap: 8,
     padding: 16,
     alignItems: 'center',
@@ -45,6 +44,7 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 6,
     shadowOpacity: 0.25,
+    marginHorizontal: 32,
   },
   input: {
     padding: 16,
