@@ -62,6 +62,7 @@ export default function RootScreen({
 
 const styles = StyleSheet.create({
   inputContainer: {
+    marginTop: 128,
     gap: 8,
     padding: 16,
     alignItems: 'center',
