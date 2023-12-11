@@ -2,6 +2,7 @@ import { Alert, View, StyleSheet, Text } from 'react-native'
 import React, { useState } from 'react'
 import PrimaryButton from '../components/PrimaryButton'
 import { TextInput } from 'react-native'
+import { Colors } from '../constants/colors';
 
 export default function RootScreen({
   onConfirmNumber
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'center',
-    backgroundColor: '#be0270',
+    backgroundColor: Colors.primaryColor,
     borderRadius: 12,
     elevation: 8,
     shadowColor: 'black',
@@ -83,9 +84,9 @@ const styles = StyleSheet.create({
   input: {
     padding: 16,
     textAlign: 'center',
-    borderBottomColor: '#e6e34c',
+    borderBottomColor: Colors.inputColor,
     borderBottomWidth: 2,
-    color: '#e6e34c',
+    color: Colors.inputColor,
     marginVertical: 8,
     fontWeight: 'bold'
   },
