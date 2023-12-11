@@ -1,6 +1,6 @@
 import { Alert, View, StyleSheet, Text } from 'react-native'
 import React, { useState } from 'react'
-import PrimaryButton from '../components/PrimaryButton'
+import PrimaryButton from '../components/ui/PrimaryButton'
 import { TextInput } from 'react-native'
 import { Colors } from '../constants/colors';
 
@@ -84,9 +84,9 @@ const styles = StyleSheet.create({
   input: {
     padding: 16,
     textAlign: 'center',
-    borderBottomColor: Colors.inputColor,
+    borderBottomColor: Colors.accentColor,
     borderBottomWidth: 2,
-    color: Colors.inputColor,
+    color: Colors.accentColor,
     marginVertical: 8,
     fontWeight: 'bold'
   },
