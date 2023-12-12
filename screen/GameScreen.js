@@ -1,5 +1,5 @@
 import { Alert, View, Text, StyleSheet } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Title from '../components/ui/Title'
 import { generateRandom } from '../utils/functions'
 import NumberCard from '../components/game/NumberCard';
@@ -9,10 +9,17 @@ let minBoundary = 1;
 let maxBoundary = 100;
 
 export default function GameScreen({
-  userNumber
+  userNumber,
+  onGameOver
 }) {
-  const initialGuess = generateRandom(minBoundary, maxBoundary, userNumber);
+  const initialGuess = generateRandom(1, 100, userNumber);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
+
+  useEffect(() => {
+    if(currentGuess === userNumber) {
+      onGameOver()
+    }
+  }, [currentGuess, userNumber, onGameOver])
 
   const onNextGuessHandler = (direction) => {
     if (
