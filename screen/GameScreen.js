@@ -4,6 +4,8 @@ import Title from '../components/ui/Title'
 import { generateRandom } from '../utils/functions'
 import NumberCard from '../components/game/NumberCard';
 import PrimaryButton from '../components/ui/PrimaryButton';
+import Card from '../components/ui/Card';
+import Instructions from '../components/ui/Instructions';
 
 let minBoundary = 1;
 let maxBoundary = 100;
@@ -45,13 +47,13 @@ export default function GameScreen({
     <View style={styles.container}>
       <Title>You guess the number</Title>
       <NumberCard>{currentGuess}</NumberCard>
-      <View>
-        <Text>Higher or lower</Text>
+      <Card>
+        <Instructions>Higher or lower</Instructions>
         <View>
           <PrimaryButton onPress={onNextGuessHandler.bind(this, 'lower')}>-</PrimaryButton>
           <PrimaryButton onPress={onNextGuessHandler.bind(this, 'greater')}>+</PrimaryButton>
         </View>
-      </View>
+      </Card>
     </View>
   )
 }

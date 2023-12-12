@@ -4,6 +4,8 @@ import PrimaryButton from '../components/ui/PrimaryButton'
 import { TextInput } from 'react-native'
 import { Colors } from '../constants/colors';
 import Title from '../components/ui/Title';
+import Card from '../components/ui/Card';
+import Instructions from '../components/ui/Instructions';
 
 export default function RootScreen({
   onConfirmNumber
@@ -36,8 +38,8 @@ export default function RootScreen({
   return (
     <View style={styles.container}>
       <Title>Guess my number</Title>
-      <View style={styles.inputContainer}>
-        <Text style={styles.instructions}>Enter a number</Text>
+      <Card>
+        <Instructions>Enter a number</Instructions>
         <TextInput
           style={styles.input}
           maxLength={2}
@@ -60,7 +62,7 @@ export default function RootScreen({
             >Confirm</PrimaryButton>
           </View>
         </View>
-      </View>
+      </Card>
     </View>
   )
 }
@@ -70,30 +72,6 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 128,
     alignItems: 'stretch'
-  },
-  inputContainer: {
-    marginTop: 128,
-    gap: 8,
-    padding: 16,
-    alignItems: 'center',
-    justifyContent: 'center',
-    alignContent: 'center',
-    backgroundColor: Colors.primaryColor,
-    borderRadius: 12,
-    elevation: 8,
-    shadowColor: 'black',
-    shadowOffset: {
-      width: 0,
-      height: 2
-    },
-    shadowRadius: 6,
-    shadowOpacity: 0.25,
-    marginHorizontal: 32,
-  },
-  instructions: {
-    color: Colors.accentColor,
-    fontSize: 24,
-    textTransform: 'uppercase'
   },
   input: {
     padding: 16,
