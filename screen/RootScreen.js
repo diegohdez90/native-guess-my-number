@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import PrimaryButton from '../components/ui/PrimaryButton'
 import { TextInput } from 'react-native'
 import { Colors } from '../constants/colors';
+import Title from '../components/ui/Title';
 
 export default function RootScreen({
   onConfirmNumber
@@ -33,28 +34,31 @@ export default function RootScreen({
   }
 
   return (
-    <View style={styles.inputContainer}>
-      <Text>Welcome</Text>
-      <TextInput
-        style={styles.input}
-        maxLength={2}
-        value={number}
-        onChangeText={onHandleChangeNumber}
-        keyboardType='number-pad'
-        autoCapitalize='none'
-        autoCorrect={false}
-        autoComplete='off'
-      />
-      <View style={styles.actions}>
-        <View style={styles.actionContainer}>
-          <PrimaryButton
-            onPress={onResetInput}
-          >Reset</PrimaryButton>
-        </View>
-        <View style={styles.actionContainer}>
-          <PrimaryButton
-            onPress={onConfirmNumberInputValue}
-          >Confirm</PrimaryButton>
+    <View style={styles.container}>
+      <Title>Guess my number</Title>
+      <View style={styles.inputContainer}>
+        <Text style={styles.instructions}>Enter a number</Text>
+        <TextInput
+          style={styles.input}
+          maxLength={2}
+          value={number}
+          onChangeText={onHandleChangeNumber}
+          keyboardType='number-pad'
+          autoCapitalize='none'
+          autoCorrect={false}
+          autoComplete='off'
+        />
+        <View style={styles.actions}>
+          <View style={styles.actionContainer}>
+            <PrimaryButton
+              onPress={onResetInput}
+            >Reset</PrimaryButton>
+          </View>
+          <View style={styles.actionContainer}>
+            <PrimaryButton
+              onPress={onConfirmNumberInputValue}
+            >Confirm</PrimaryButton>
+          </View>
         </View>
       </View>
     </View>
@@ -62,6 +66,11 @@ export default function RootScreen({
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: 128,
+    alignItems: 'stretch'
+  },
   inputContainer: {
     marginTop: 128,
     gap: 8,
@@ -80,6 +89,11 @@ const styles = StyleSheet.create({
     shadowRadius: 6,
     shadowOpacity: 0.25,
     marginHorizontal: 32,
+  },
+  instructions: {
+    color: Colors.accentColor,
+    fontSize: 24,
+    textTransform: 'uppercase'
   },
   input: {
     padding: 16,
