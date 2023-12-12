@@ -3,10 +3,14 @@ import React from 'react'
 import { Colors } from '../../constants/colors'
 
 export default function Instructions({
-  children
+  children,
+  style
 }) {
   return (
-    <Text style={styles.instructions}>{children}</Text>
+    <Text style={[
+      style,
+      styles.instructions,
+    ]}>{children}</Text>
   )
 }
 
